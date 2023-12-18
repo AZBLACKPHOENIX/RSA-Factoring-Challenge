@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 /**
- * isPrime - Check if a number is prime.
+ * is_prime - Check if a number is prime.
  * @num: The number to check.
  *
  * Return: 1 if prime, 0 otherwise.
  */
-int isPrime(int num) {
+int is_prime(int num) {
     if (num < 2) {
         return 0; /* Not prime */
     }
@@ -24,7 +24,7 @@ int isPrime(int num) {
  */
 void factorize(int num) {
     for (int i = 2; i <= num / 2; i++) {
-        if (isPrime(i) && isPrime(num / i)) {
+        if (is_prime(i) && is_prime(num / i)) {
             printf("%d=%d*%d\n", num, i, num / i);
             return;
         }
