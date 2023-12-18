@@ -1,19 +1,27 @@
 #include <stdio.h>
 
-// Function to check if a number is prime
+/**
+ * isPrime - Check if a number is prime.
+ * @num: The number to check.
+ *
+ * Return: 1 if prime, 0 otherwise.
+ */
 int isPrime(int num) {
     if (num < 2) {
-        return 0; // Not prime
+        return 0; /* Not prime */
     }
     for (int i = 2; i * i <= num; i++) {
         if (num % i == 0) {
-            return 0; // Not prime
+            return 0; /* Not prime */
         }
     }
-    return 1; // Prime
+    return 1; /* Prime */
 }
 
-// Function to factorize a number
+/**
+ * factorize - Factorize a number into two smaller numbers.
+ * @num: The number to factorize.
+ */
 void factorize(int num) {
     for (int i = 2; i <= num / 2; i++) {
         if (isPrime(i) && isPrime(num / i)) {
@@ -24,6 +32,13 @@ void factorize(int num) {
     printf("%d=%d*%d\n", num, num, 1);
 }
 
+/**
+ * main - Entry point of the program.
+ * @argc: Number of command-line arguments.
+ * @argv: Array of command-line argument strings.
+ *
+ * Return: 0 on success, 1 on failure.
+ */
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         fprintf(stderr, "Usage: %s <file>\n", argv[0]);
